@@ -5,7 +5,7 @@ import { useAuth0 } from '@auth0/auth0-react'
 
 const Navbar = () => {
   // const userContext = useAuth()
-  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0()
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0()
 
   const navLinkStyle = ({ isActive }: { isActive: boolean }) => {
     return {

@@ -3,8 +3,7 @@ interface GreetProps {
   name?: string
 }
 function Greet({ name }: GreetProps) {
-  const a = 23
-  cccccccccccc
+  const xxxxxx
   return <div>Greet {name}</div>
 }
 
