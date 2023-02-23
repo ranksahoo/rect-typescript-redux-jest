@@ -1,0 +1,223 @@
+{
+  "users": [
+    {
+      "name": "Rufus Wolff",
+      "id": 3
+    },
+    {
+      "name": "Grace Fisher",
+      "id": 4
+    },
+    {
+      "name": "Marc Mills",
+      "id": 7
+    },
+    {
+      "name": "Camille Bailey",
+      "id": 8
+    },
+    {
+      "name": "Darryl Stokes",
+      "id": 10
+    },
+    {
+      "name": "Andrew Cummerata II",
+      "id": 11
+    },
+    {
+      "name": "Jeannie Gutkowski DDS",
+      "id": 12
+    },
+    {
+      "name": "Eileen Zulauf",
+      "id": 13
+    },
+    {
+      "name": "Maxine Gerhold",
+      "id": 14
+    },
+    {
+      "name": "Andres Bayer",
+      "id": 15
+    },
+    {
+      "name": "Cary Ortiz",
+      "id": 16
+    },
+    {
+      "name": "Rudolph Brakus",
+      "id": 17
+    },
+    {
+      "name": "Ernestine Halvorson",
+      "id": 18
+    },
+    {
+      "name": "Bert McDermott",
+      "id": 19
+    },
+    {
+      "name": "Jeffery Kiehn",
+      "id": 20
+    },
+    {
+      "name": "Gilbert Halvorson",
+      "id": 21
+    },
+    {
+      "name": "Joan Cummings III",
+      "id": 22
+    },
+    {
+      "name": "Shane Weimann",
+      "id": 23
+    },
+    {
+      "name": "Glenda Wintheiser",
+      "id": 24
+    },
+    {
+      "name": "Dr. Clinton Connelly II",
+      "id": 25
+    }
+  ],
+  "albums": [
+    {
+      "userId": 3,
+      "title": "Oriental Bronze Bacon",
+      "id": 17
+    },
+    {
+      "userId": 3,
+      "title": "Electronic Bronze Tuna",
+      "id": 18
+    },
+    {
+      "userId": 3,
+      "title": "Generic Cotton Towels",
+      "id": 19
+    },
+    {
+      "userId": 3,
+      "title": "Rustic Cotton Salad",
+      "id": 22
+    },
+    {
+      "userId": 13,
+      "title": "Fantastic Cotton Gloves",
+      "id": 23
+    },
+    {
+      "userId": 13,
+      "title": "Handmade Bronze Chair",
+      "id": 24
+    },
+    {
+      "userId": 13,
+      "title": "Incredible Granite Salad",
+      "id": 25
+    },
+    {
+      "userId": 13,
+      "title": "Oriental Steel Chips",
+      "id": 26
+    },
+    {
+      "userId": 13,
+      "title": "Tasty Concrete Fish",
+      "id": 27
+    },
+    {
+      "userId": 3,
+      "title": "Handcrafted Cotton Computer",
+      "id": 28
+    },
+    {
+      "userId": 16,
+      "title": "Luxurious Rubber Soap",
+      "id": 29
+    },
+    {
+      "userId": 16,
+      "title": "Awesome Cotton Fish",
+      "id": 30
+    },
+    {
+      "userId": 16,
+      "title": "Elegant Granite Soap",
+      "id": 31
+    },
+    {
+      "userId": 3,
+      "title": "Tasty Concrete Sausages",
+      "id": 32
+    },
+    {
+      "userId": 3,
+      "title": "Refined Rubber Tuna",
+      "id": 33
+    },
+    {
+      "userId": 3,
+      "title": "Sleek Concrete Mouse",
+      "id": 34
+    },
+    {
+      "userId": 3,
+      "title": "Electronic Steel Cheese",
+      "id": 35
+    },
+    {
+      "userId": 3,
+      "title": "Recycled Fresh Chicken",
+      "id": 36
+    }
+  ],
+  "photos": [
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=61687",
+      "id": 9
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=21689",
+      "id": 10
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=76087",
+      "id": 11
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=70714",
+      "id": 12
+    },
+    {
+      "albumId": 17,
+      "url": "https://loremflickr.com/150/150/abstract?lock=42713",
+      "id": 13
+    },
+    {
+      "albumId": 18,
+      "url": "https://loremflickr.com/150/150/abstract?lock=33284",
+      "id": 14
+    },
+    {
+      "albumId": 18,
+      "url": "https://loremflickr.com/150/150/abstract?lock=43427",
+      "id": 15
+    },
+    {
+      "albumId": 19,
+      "url": "https://loremflickr.com/150/150/abstract?lock=33508",
+      "id": 16
+    },
+    {
+      "albumId": 22,
+      "url": "https://loremflickr.com/150/150/abstract?lock=77969",
+      "id": 17
+    }
+  ]
+}

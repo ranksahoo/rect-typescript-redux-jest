@@ -1,0 +1,6 @@
+{
+  "domain": "dev-ozsyodat2fr3jvny.us.auth0.com",
+  "clientId": "0gwEHim9qj1typUt5wxneCEBmqQbp3yz",
+  "audience": "{yourApiIdentifier}",
+  "redirectUri": "http://localhost:3000"
+}
