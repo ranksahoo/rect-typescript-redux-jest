@@ -19,7 +19,13 @@
     "removeComments": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@tcm/*": ["./src/components/*"],
+      "@tcm/utils/*": ["./src/utils/*"],
+      "@tcm/types/*": ["./src/types/*"],
+      "@tcm/hooks/*": ["./src/hooks/*"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build"]
