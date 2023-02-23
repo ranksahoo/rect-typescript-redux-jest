@@ -16,6 +16,6 @@ test('Greet renders with name', () => {
 
 test('Greet renders with other name', () => {
   render(<Greet name="Sahoo" />)
-  const linkElement = screen.getByText(/Greet Ranjan/i)
+  const linkElement = screen.getByText(/Greet Sahoo/i)
   expect(linkElement).toBeInTheDocument()
 })
