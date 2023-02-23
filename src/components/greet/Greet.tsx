@@ -4,9 +4,6 @@ interface GreetProps {
 }
 function Greet({ name }: GreetProps) {
   const xxxxxx
-  const xxxxxx
-  const xxxxxx
-  const xxxxxx
   return <div>Greet {name}</div>
 }
 
