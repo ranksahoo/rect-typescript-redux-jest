@@ -1,5 +1,5 @@
-import { createRandomSong } from '../data'
-import { useAppDispatch, useAppSelector, addSong, removeSong } from '../store'
+import { createRandomSong } from '@mocks/data'
+import { useAppDispatch, useAppSelector, addSong, removeSong } from '../../store'
 
 function SongPlaylist() {
   const dispatch = useAppDispatch()
@@ -28,10 +28,7 @@ function SongPlaylist() {
     return (
       <li key={song}>
         {song}
-        <button
-          onClick={() => handleSongRemove(song)}
-          className="button is-danger"
-        >
+        <button onClick={() => handleSongRemove(song)} className='button is-danger'>
           X
         </button>
       </li>
@@ -39,14 +36,11 @@ function SongPlaylist() {
   })
 
   return (
-    <div className="content">
-      <div className="table-header">
-        <h3 className="subtitle is-3">Song Playlist</h3>
-        <div className="buttons">
-          <button
-            onClick={() => handleSongAdd(createRandomSong())}
-            className="button is-link"
-          >
+    <div className='content'>
+      <div className='table-header'>
+        <h3 className='subtitle is-3'>Song Playlist</h3>
+        <div className='buttons'>
+          <button onClick={() => handleSongAdd(createRandomSong())} className='button is-link'>
             + Add Song to Playlist
           </button>
         </div>

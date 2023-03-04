@@ -35,9 +35,7 @@ const carsSlice = createSlice({
       //   );
       //   const index = state.cars.indexOf(carToRemove[0]);
       //   state.cars.splice(index, 1);
-      const updatedCars = state.data.filter(
-        (item: Car) => item.id !== action.payload
-      )
+      const updatedCars = state.data.filter((item: Car) => item.id !== action.payload)
       state.data = updatedCars
     },
   },

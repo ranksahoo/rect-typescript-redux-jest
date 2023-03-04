@@ -1,7 +1,7 @@
-import '../styles/Media.css'
+import '@styles/Media.css'
 import { useDispatch } from 'react-redux'
-import MoviePlaylist from '../components/MoviePlaylist'
-import SongPlaylist from '../components/SongPlaylist'
+import MoviePlaylist from '@components/movie/MoviePlaylist'
+import SongPlaylist from '@components/song/SongPlaylist'
 import { reset } from '../store'
 
 export default function Media() {
@@ -13,8 +13,8 @@ export default function Media() {
   }
 
   return (
-    <div className="container is-fluid">
-      <button onClick={() => handleResetClick()} className="button is-danger">
+    <div className='container is-fluid'>
+      <button onClick={() => handleResetClick()} className='button is-danger'>
         Reset Both Playlists
       </button>
       <hr />

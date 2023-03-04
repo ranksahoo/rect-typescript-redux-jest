@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { User } from '../slices/usersSlice'
+import { User } from '@store/slices/usersSlice'
 
 const pause = (duration: number) => {
   return new Promise((resolve) => {
@@ -42,7 +42,7 @@ const albumsApi = createApi({
             params: {
               userId: user.id,
             },
-            //headers: {},
+            // headers: {},
             method: 'GET',
           }
         },
@@ -61,7 +61,7 @@ const albumsApi = createApi({
               userId: user.id,
               title: faker.commerce.productName(),
             },
-            //headers: {},
+            // headers: {},
             method: 'POST',
           }
         },
@@ -86,9 +86,5 @@ const albumsApi = createApi({
 
 console.log(albumsApi)
 
-export const {
-  useFetchAlbumsQuery,
-  useAddAlbumMutation,
-  useRemoveAlbumMutation,
-} = albumsApi
+export const { useFetchAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } = albumsApi
 export { albumsApi }

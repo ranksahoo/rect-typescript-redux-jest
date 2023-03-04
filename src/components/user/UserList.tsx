@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { useAppSelector, fetchUsers, addUser } from '../store'
-import Button from './elements/Button'
-import Skeleton from './Skeleton'
-import { useThunk } from '../store/hooks'
-import UsersListItem from './UsersListItem'
-import { User } from '../store/slices/usersSlice'
+import { useAppSelector, fetchUsers, addUser } from '../../store'
+import Button from '@components/elements/Button'
+import Skeleton from '@components/Skeleton'
+import { useThunk } from '@store/hooks'
+import UsersListItem from '@components/user/UsersListItem'
+import { User } from '@store/slices/usersSlice'
 
 function UserList() {
   const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUsers)
@@ -21,7 +21,7 @@ function UserList() {
   }
   let content
   if (isLoadingUsers) {
-    content = <Skeleton times={6} className="h-10 w-full" />
+    content = <Skeleton times={6} className='h-10 w-full' />
   } else if (loadingUsersError) {
     content = <div>Error in fetching data.</div>
   } else {
@@ -31,8 +31,8 @@ function UserList() {
   }
   return (
     <div>
-      <div className="flex flex-row justify-between items-center m-3">
-        <h1 className="m-2 text-xl">Users</h1>
+      <div className='flex flex-row justify-between items-center m-3'>
+        <h1 className='m-2 text-xl'>Users</h1>
         <Button loading={isCreatingUsers} onClick={handleAddUser}>
           + Add User
         </Button>

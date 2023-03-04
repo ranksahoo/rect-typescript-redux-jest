@@ -1,5 +1,5 @@
-import { useAppSelector } from '../store'
-import { Car } from '../store/slices/carsSlice'
+import { useAppSelector } from '../../store'
+import { Car } from '@store/slices/carsSlice'
 function CarValue() {
   // const totalCost = useSelector(({ cars: { data, searchTerm } }: any) => {
   //   const filteredCars = data.filter((car: any) => {
@@ -12,12 +12,10 @@ function CarValue() {
 
   const totalCost = useAppSelector(({ cars: { data, searchTerm } }) =>
     data
-      .filter((car: Car) =>
-        car.name.toLowerCase().includes(searchTerm.toLowerCase())
-      )
-      .reduce((acc: number, car: Car) => acc + car.cost, 0)
+      .filter((car: Car) => car.name.toLowerCase().includes(searchTerm.toLowerCase()))
+      .reduce((acc: number, car: Car) => acc + car.cost, 0),
   )
 
-  return <div className="car-value">Total Cost: ${totalCost}</div>
+  return <div className='car-value'>Total Cost: ${totalCost}</div>
 }
 export default CarValue

@@ -1,10 +1,10 @@
 import { GoTrashcan } from 'react-icons/go'
-import { useThunk } from '../store/hooks'
-import { removeUser } from '../store'
-import AlbumsList from './AlbumsList'
-import Button from './elements/Button'
-import ExpandablePanel from './ExpandablePanel'
-import { User } from '../store/slices/usersSlice'
+import { useThunk } from '@store/hooks'
+import { removeUser } from '../../store'
+import AlbumsList from '@components/album/AlbumsList'
+import Button from '@components/elements/Button'
+import ExpandablePanel from '@components/ExpandablePanel'
+import { User } from '@store/slices/usersSlice'
 
 interface UsersListItemProps {
   user: User
@@ -16,11 +16,7 @@ function UsersListItem({ user }: UsersListItemProps) {
   }
   const header = (
     <>
-      <Button
-        className="mr-3"
-        loading={deletingUser}
-        onClick={handleDeleteUser}
-      >
+      <Button className='mr-3' loading={deletingUser} onClick={handleDeleteUser}>
         <GoTrashcan />
       </Button>
       {deletingUserError && <div>Error deleting user</div>}

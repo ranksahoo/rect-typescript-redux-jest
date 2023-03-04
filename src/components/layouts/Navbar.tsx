@@ -21,33 +21,36 @@ const Navbar = () => {
       },
     })
   return (
-    <nav className="top-0 flex items-center w-full px-28 h-14 shadow bg-amber-700 text-white">
-      <NavLink to="/" style={navLinkStyle}>
+    <nav className='top-0 flex items-center w-full px-28 h-14 shadow bg-amber-700 text-white'>
+      <NavLink to='/' style={navLinkStyle}>
         Home
       </NavLink>
       {isAuthenticated && (
         <>
-          <NavLink to="/about" style={navLinkStyle}>
-            About
+          <NavLink to='/albums' style={navLinkStyle}>
+            Albums
           </NavLink>
-          <NavLink to="/users" style={navLinkStyle}>
+          <NavLink to='/cars' style={navLinkStyle}>
+            Cars
+          </NavLink>
+          <NavLink to='/media' style={navLinkStyle}>
+            Media
+          </NavLink>
+          <NavLink to='/songs' style={navLinkStyle}>
+            Songs
+          </NavLink>
+          <NavLink to='/users' style={navLinkStyle}>
             Users
-          </NavLink>
-          <NavLink to="/profile" style={navLinkStyle}>
-            Profile
-          </NavLink>
-          <NavLink to="/products" style={navLinkStyle}>
-            Products
           </NavLink>
         </>
       )}
-      <div className="w-full">
+      <div className='w-full'>
         {!isAuthenticated ? (
-          <button onClick={() => loginWithRedirect()} className="float-right">
+          <button onClick={() => loginWithRedirect()} className='float-right'>
             Login
           </button>
         ) : (
-          <button onClick={() => logoutWithRedirect()} className="float-right">
+          <button onClick={() => logoutWithRedirect()} className='float-right'>
             Logout
           </button>
         )}

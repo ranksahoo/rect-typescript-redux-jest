@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { reset } from '../actions'
+import { reset } from '@store/actions'
 
 const initialState: string[] = []
 

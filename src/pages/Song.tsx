@@ -1,11 +1,11 @@
-import UserList from '@components/user/UserList'
+import SongPlaylist from '@components/song/SongPlaylist'
 
-const Home = () => {
+const Song = () => {
   return (
     <div className='container mx-auto'>
       <h1 className='text-lg font-bold'>Home Page</h1>
-      <UserList />
+      <SongPlaylist />
     </div>
   )
 }
-export default Home
+export default Song

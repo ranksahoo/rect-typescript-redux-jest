@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
-import { User } from '../slices/usersSlice'
+import { User } from '@store/slices/usersSlice'
 
 const removeUser = createAsyncThunk('users/remove', async (user: User) => {
   await axios.delete(`http://localhost:3005/users/${user.id}`)

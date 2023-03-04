@@ -1,8 +1,7 @@
-import UserList from '../components/UserList'
-
+import UserList from '@components/user/UserList'
 function Albums() {
   return (
-    <div className="container mx-auto">
+    <div className='container mx-auto'>
       <UserList />
     </div>
   )

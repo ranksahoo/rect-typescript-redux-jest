@@ -17,7 +17,7 @@ function useThunk(thunk: any) {
           setLoading(false)
         })
     },
-    [dispatch, thunk]
+    [dispatch, thunk],
   )
   return [runThunk, isLoading, error]
 }

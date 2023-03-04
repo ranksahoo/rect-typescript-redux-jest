@@ -1,12 +1,7 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import {
-  carsReducer,
-  changeSearchTerm,
-  addCar,
-  removeCar,
-} from './slices/carsSlice'
+import { carsReducer, changeSearchTerm, addCar, removeCar } from './slices/carsSlice'
 import { formReducer, changeName, changeCost } from './slices/formSlice'
 import { moviesReducer, addMovie, removeMovie } from './slices/moviesSlice'
 import { songsReducer, addSong, removeSong } from './slices/songsSlice'
@@ -26,9 +21,7 @@ const store = configureStore({
     [photosApi.reducerPath]: photosApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware()
-      .concat(albumsApi.middleware)
-      .concat(photosApi.middleware)
+    return getDefaultMiddleware().concat(albumsApi.middleware).concat(photosApi.middleware)
   },
 })
 
@@ -38,11 +31,7 @@ export { store }
 export { changeSearchTerm, addCar, removeCar, changeName, changeCost }
 export { addMovie, removeMovie, addSong, removeSong, reset }
 export * from './thunks'
-export {
-  useFetchAlbumsQuery,
-  useAddAlbumMutation,
-  useRemoveAlbumMutation,
-} from './apis/albumsApi'
+export { useFetchAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } from './apis/albumsApi'
 export * from './apis/photosApi'
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

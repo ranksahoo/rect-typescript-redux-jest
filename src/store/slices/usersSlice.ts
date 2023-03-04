@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { addUser } from '../thunks/addUser'
-import { fetchUsers } from '../thunks/fetchUsers'
-import { removeUser } from '../thunks/removeUser'
+import { addUser } from '@store/thunks/addUser'
+import { fetchUsers } from '@store/thunks/fetchUsers'
+import { removeUser } from '@store/thunks/removeUser'
 
 export type User = {
   name: string
@@ -26,13 +26,10 @@ const usersSlice = createSlice({
     builder.addCase(fetchUsers.pending, (state) => {
       state.isLoading = true
     })
-    builder.addCase(
-      fetchUsers.fulfilled,
-      (state, action: PayloadAction<User[]>) => {
-        state.isLoading = false
-        state.data = action.payload
-      }
-    )
+    builder.addCase(fetchUsers.fulfilled, (state, action: PayloadAction<User[]>) => {
+      state.isLoading = false
+      state.data = action.payload
+    })
     builder.addCase(fetchUsers.rejected, (state, action) => {
       state.isLoading = false
       state.error = action.error
@@ -55,15 +52,12 @@ const usersSlice = createSlice({
     builder.addCase(removeUser.pending, (state) => {
       state.isLoading = true
     })
-    builder.addCase(
-      removeUser.fulfilled,
-      (state, action: PayloadAction<User>) => {
-        state.isLoading = false
-        state.data = state.data.filter((item: User) => {
-          return item.id !== action.payload.id
-        })
-      }
-    )
+    builder.addCase(removeUser.fulfilled, (state, action: PayloadAction<User>) => {
+      state.isLoading = false
+      state.data = state.data.filter((item: User) => {
+        return item.id !== action.payload.id
+      })
+    })
     builder.addCase(removeUser.rejected, (state, action) => {
       state.isLoading = false
       state.error = action.error

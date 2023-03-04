@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { addCar, Car } from './carsSlice'
+import { addCar, Car } from '@store/slices/carsSlice'
 
 const initialState: Car = {
   name: '',

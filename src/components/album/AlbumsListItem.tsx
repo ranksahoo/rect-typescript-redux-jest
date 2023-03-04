@@ -1,9 +1,9 @@
-import { useRemoveAlbumMutation } from '../store'
-import ExpandablePanel from './ExpandablePanel'
-import Button from './elements/Button'
+import { useRemoveAlbumMutation } from '../../store'
+import ExpandablePanel from '@components/ExpandablePanel'
+import Button from '@components/elements/Button'
 import { GoTrashcan } from 'react-icons/go'
-import PhotosList from './PhotosList'
-import { Album } from '../store/apis/albumsApi'
+import PhotosList from '@components/album/PhotosList'
+import { Album } from '@store/apis/albumsApi'
 
 interface AlbumsListItemProps {
   album: Album
@@ -16,9 +16,9 @@ function AlbumsListItem({ album }: AlbumsListItemProps) {
   }
 
   const heder = (
-    <div className="flex flex-row items-center">
+    <div className='flex flex-row items-center'>
       <Button
-        className="mr-3"
+        className='mr-3'
         loading={resultsRemove.isLoading}
         onClick={() => {
           handleDeleteAlbum(album)
