@@ -22,7 +22,7 @@ const usersSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
-    //Fetch Users
+    // Fetch Users
     builder.addCase(fetchUsers.pending, (state) => {
       state.isLoading = true
     })
@@ -38,7 +38,7 @@ const usersSlice = createSlice({
       state.error = action.error
     })
 
-    //Add user
+    // Add user
     builder.addCase(addUser.pending, (state) => {
       state.isLoading = true
     })
@@ -51,7 +51,7 @@ const usersSlice = createSlice({
       state.error = action.error
     })
 
-    //remove user
+    // remove user
     builder.addCase(removeUser.pending, (state) => {
       state.isLoading = true
     })
