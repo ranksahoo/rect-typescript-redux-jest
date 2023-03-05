@@ -9,15 +9,15 @@ function CarSearch() {
     dispatch(changeSearchTerm(event.target.value))
   }
   return (
-    <div className='list-header'>
-      <h3 className='title is-3'>My Cars</h3>
-      <div className='search field is-horizontal'>
-        <label className='label' htmlFor='searchTerm'>
+    <div className="list-header">
+      <h3 className="title is-3">My Cars</h3>
+      <div className="search field is-horizontal">
+        <label className="label" htmlFor="searchTerm">
           Search
         </label>
         <input
-          className='input'
-          id='searchTerm'
+          className="input"
+          id="searchTerm"
           value={searchTerm}
           onChange={handleSearchTermChange}
         />

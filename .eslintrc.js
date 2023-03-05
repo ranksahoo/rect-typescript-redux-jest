@@ -59,5 +59,6 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'jsx-quotes': ['error', 'prefer-double'],
   },
 }

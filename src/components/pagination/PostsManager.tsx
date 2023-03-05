@@ -37,7 +37,7 @@ const PostList = () => {
 
   return (
     <Box>
-      <HStack spacing='14px'>
+      <HStack spacing="14px">
         <Button
           onClick={() => setPage((prev) => prev - 1)}
           isLoading={isFetching}
@@ -57,8 +57,8 @@ const PostList = () => {
       <List spacing={3} mt={6}>
         {posts?.data.map(({ id, title, status }) => (
           <ListItem key={id}>
-            <ListIcon as={MdBook} color='green.500' /> {title}{' '}
-            <Badge ml='1' fontSize='0.8em' colorScheme={getColorForStatus(status)}>
+            <ListIcon as={MdBook} color="green.500" /> {title}{' '}
+            <Badge ml="1" fontSize="0.8em" colorScheme={getColorForStatus(status)}>
               {status}
             </Badge>
           </ListItem>
@@ -79,12 +79,12 @@ export const PostsCountStat = () => {
   )
 }
 
-export const PostsManager = () => {
+const PostsManager = () => {
   return (
     <Box>
-      <Flex wrap='wrap' bg='#011627' p={4} color='white'>
+      <Flex wrap="wrap" bg="#011627" p={4} color="white">
         <Box>
-          <Heading size='xl'>Manage Posts</Heading>
+          <Heading size="xl">Manage Posts</Heading>
         </Box>
         <Spacer />
         <Box>

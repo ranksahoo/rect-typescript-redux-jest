@@ -42,7 +42,7 @@ function Button({
 
   return (
     <button {...rest} disabled={loading} className={classes}>
-      {loading ? <GoSync className='animate-spin' /> : children}
+      {loading ? <GoSync className="animate-spin" /> : children}
     </button>
   )
 }

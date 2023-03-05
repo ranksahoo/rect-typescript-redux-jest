@@ -12,7 +12,7 @@ module.exports = {
   //   },
   // ],
   trailingComma: 'all',
-  jsxSingleQuote: true,
+  // jsxSingleQuote: true,
   bracketSpacing: true,
   endOfLine: 'auto',
 }

@@ -13,8 +13,8 @@ export default function Media() {
   }
 
   return (
-    <div className='container is-fluid'>
-      <button onClick={() => handleResetClick()} className='button is-danger'>
+    <div className="container is-fluid">
+      <button onClick={() => handleResetClick()} className="button is-danger">
         Reset Both Playlists
       </button>
       <hr />

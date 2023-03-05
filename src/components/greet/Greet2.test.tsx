@@ -10,13 +10,13 @@ describe('Greet', () => {
   })
 
   test('Greet renders with name', () => {
-    render(<Greet name='Ranjan' />)
+    render(<Greet name="Ranjan" />)
     const linkElement = screen.getByText(/Greet Ranjan/i)
     expect(linkElement).toBeInTheDocument()
   })
 
   test('Greet renders with other name', () => {
-    render(<Greet name='Sahoo' />)
+    render(<Greet name="Sahoo" />)
     const linkElement = screen.getByText(/Greet Sahoo/i)
     expect(linkElement).toBeInTheDocument()
   })

@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-// const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -11,8 +11,8 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
-    // new webpack.HotModuleReplacementPlugin(),
-    // new ReactRefreshWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin(),
     new webpack.DefinePlugin({
       'process.env.BASE_URL': JSON.stringify('https://www.tcmbank.dev.com'),
     }),

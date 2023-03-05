@@ -93,3 +93,13 @@ Package.json
 "msw": {
 "workerDirectory": "public"
 }
+
+yarn add date-fns react-table react-table-sticky styled-components
+
+yarn add -D @types/react-table
+
+yarn add -D @types/styled-components
+
+yarn add -D @types/react-redux
+
+yarn add -D @types/react-redux

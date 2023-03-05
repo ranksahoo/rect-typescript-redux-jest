@@ -5,7 +5,7 @@ describe('Button', () => {
   it('renders', () => {
     render(
       <Button
-        text='hello'
+        text="hello"
         onClick={() => {
           console.log()
         }}

@@ -10,7 +10,7 @@ const ProtectRoute = ({ children }: ProtectRouteProps) => {
   const userContext = useAuth()
   const location = useLocation()
   if (!userContext?.user) {
-    return <Navigate to='/login' state={{ path: location.pathname }} />
+    return <Navigate to="/login" state={{ path: location.pathname }} />
   }
   return <>{children}</>
 }

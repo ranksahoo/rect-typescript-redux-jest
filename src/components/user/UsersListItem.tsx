@@ -16,7 +16,7 @@ function UsersListItem({ user }: UsersListItemProps) {
   }
   const header = (
     <>
-      <Button className='mr-3' loading={deletingUser} onClick={handleDeleteUser}>
+      <Button className="mr-3" loading={deletingUser} onClick={handleDeleteUser}>
         <GoTrashcan />
       </Button>
       {deletingUserError && <div>Error deleting user</div>}

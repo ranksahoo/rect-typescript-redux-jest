@@ -16,9 +16,9 @@ function AlbumsListItem({ album }: AlbumsListItemProps) {
   }
 
   const heder = (
-    <div className='flex flex-row items-center'>
+    <div className="flex flex-row items-center">
       <Button
-        className='mr-3'
+        className="mr-3"
         loading={resultsRemove.isLoading}
         onClick={() => {
           handleDeleteAlbum(album)

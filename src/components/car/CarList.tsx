@@ -23,14 +23,14 @@ function CarList() {
         <p>
           {car.name} - ${car.cost}
         </p>
-        <button className='button is-danger' onClick={() => handleCarDelete(car)}>
+        <button className="button is-danger" onClick={() => handleCarDelete(car)}>
           Delete
         </button>
       </div>
     )
   })
   return (
-    <div className='car-list'>
+    <div className="car-list">
       {renderedCars}
       <hr />
     </div>
