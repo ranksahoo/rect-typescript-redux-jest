@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useAppSelector, fetchUsers, addUser } from '../../store'
+import { useAppSelector, fetchUsers, addUser } from '@store/index'
 import Button from '@components/elements/Button'
 import Skeleton from '@components/Skeleton'
 import { useThunk } from '@store/hooks'

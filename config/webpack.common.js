@@ -11,7 +11,6 @@ module.exports = {
       '@utils': path.resolve(__dirname, '..', 'src/utils'),
       '@types': path.resolve(__dirname, '..', 'src/types'),
       '@hooks': path.resolve(__dirname, '..', 'src/hooks'),
-      '@store': path.resolve(__dirname, '..', 'src/store'),
       '@context': path.resolve(__dirname, '..', 'src/context'),
       '@pages': path.resolve(__dirname, '..', 'src/pages'),
       '@styles': path.resolve(__dirname, '..', 'src/styles'),
@@ -19,6 +18,7 @@ module.exports = {
       '@auth': path.resolve(__dirname, '..', 'src/auth'),
       '@mocks': path.resolve(__dirname, '..', 'src/mocks'),
       '@types': path.resolve(__dirname, '..', 'src/types'),
+      '@store': path.resolve(__dirname, '..', 'src/store'),
     },
   },
   module: {

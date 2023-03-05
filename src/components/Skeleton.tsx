@@ -26,8 +26,9 @@ function Skeleton({ times, className }: SkeletonProps) {
   const boxes = Array(times)
     .fill(0)
     .map((_, index) => {
+      const width = index % 2 === 0 ? 100 + '%' : 100 - index * 5 + '%'
       return (
-        <div key={index} className={outerClassNames}>
+        <div key={index} className={outerClassNames} style={{ width: width, height: '20px' }}>
           <div className={innerClassNames}></div>
         </div>
       )

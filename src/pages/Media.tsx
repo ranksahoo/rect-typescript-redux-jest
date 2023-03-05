@@ -2,7 +2,7 @@ import '@styles/Media.css'
 import { useDispatch } from 'react-redux'
 import MoviePlaylist from '@components/movie/MoviePlaylist'
 import SongPlaylist from '@components/song/SongPlaylist'
-import { reset } from '../store'
+import { reset } from '@store/index'
 
 export default function Media() {
   const dispatch = useDispatch()

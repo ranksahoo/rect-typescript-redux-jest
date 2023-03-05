@@ -1,4 +1,4 @@
-import { useAppSelector } from '../../store'
+import { useAppSelector } from '@store/index'
 import { Car } from '@store/slices/carsSlice'
 function CarValue() {
   // const totalCost = useSelector(({ cars: { data, searchTerm } }: any) => {

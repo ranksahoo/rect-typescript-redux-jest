@@ -1,4 +1,4 @@
-import { useFetchPhotosQuery, useAddPhotoMutation, Photo } from '../../store'
+import { useFetchPhotosQuery, useAddPhotoMutation, Photo } from '@store/index'
 import { Album } from '@store/apis/albumsApi'
 import Button from '@components/elements/Button'
 import PhotosListItem from '@components/album/PhotosListItem'

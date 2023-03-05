@@ -1,4 +1,4 @@
-import { useFetchAlbumsQuery, useAddAlbumMutation } from '../../store'
+import { useFetchAlbumsQuery, useAddAlbumMutation } from '@store/index'
 import Button from '@components/elements/Button'
 import AlbumsListItem from '@components/album/AlbumsListItem'
 import { User } from '@store/slices/usersSlice'

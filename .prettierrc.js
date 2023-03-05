@@ -3,6 +3,14 @@ module.exports = {
   tabWidth: 2,
   printWidth: 100,
   singleQuote: true,
+  // overrides: [
+  //   {
+  //     files: ["**/*.css", "**/*.scss", "**/*.html", ".prettierrc.js"],
+  //     options: {
+  //       singleQuote: false,
+  //     },
+  //   },
+  // ],
   trailingComma: 'all',
   jsxSingleQuote: true,
   bracketSpacing: true,

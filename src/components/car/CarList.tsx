@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector, removeCar } from '../../store'
+import { useAppDispatch, useAppSelector, removeCar } from '@store/index'
 import { Car } from '@store/slices/carsSlice'
 
 function CarList() {

@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector, addCar, changeCost, changeName } from '../../store'
+import { useAppDispatch, useAppSelector, addCar, changeCost, changeName } from '@store/index'
 
 function CarForm() {
   const dispatch = useAppDispatch()

@@ -20,6 +20,7 @@ export const Auth0ProviderWithNavigate = ({ children }) => {
       domain={config.domain}
       clientId={config.clientId}
       authorizationParams={{
+        // eslint-disable-next-line camelcase
         redirect_uri: config.redirectUri,
       }}
       onRedirectCallback={onRedirectCallback}

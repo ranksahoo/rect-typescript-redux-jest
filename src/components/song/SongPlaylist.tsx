@@ -1,5 +1,5 @@
 import { createRandomSong } from '@mocks/data'
-import { useAppDispatch, useAppSelector, addSong, removeSong } from '../../store'
+import { useAppDispatch, useAppSelector, addSong, removeSong } from '@store/index'
 
 function SongPlaylist() {
   const dispatch = useAppDispatch()

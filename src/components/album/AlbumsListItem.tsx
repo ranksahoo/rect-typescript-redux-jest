@@ -1,4 +1,4 @@
-import { useRemoveAlbumMutation } from '../../store'
+import { useRemoveAlbumMutation } from '@store/index'
 import ExpandablePanel from '@components/ExpandablePanel'
 import Button from '@components/elements/Button'
 import { GoTrashcan } from 'react-icons/go'

@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector, changeSearchTerm } from '../../store'
+import { useAppDispatch, useAppSelector, changeSearchTerm } from '@store/index'
 
 function CarSearch() {
   const dispatch = useAppDispatch()

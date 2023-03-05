@@ -1,5 +1,5 @@
 import { GoTrashcan } from 'react-icons/go'
-import { Photo, useRemovePhotoMutation } from '../../store'
+import { Photo, useRemovePhotoMutation } from '@store/index'
 
 interface PhotosListItemProps {
   photo: Photo

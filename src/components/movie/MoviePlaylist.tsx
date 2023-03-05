@@ -1,5 +1,5 @@
 import { createRandomMovie } from '../../mocks/data'
-import { useAppDispatch, useAppSelector, addMovie, removeMovie } from '../../store'
+import { useAppDispatch, useAppSelector, addMovie, removeMovie } from '@store/index'
 
 function MoviePlaylist() {
   const dispatch = useAppDispatch()
