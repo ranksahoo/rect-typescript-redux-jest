@@ -8,6 +8,7 @@ import Albums from '@pages/Albums'
 import Cars from '@pages/Cars'
 import Media from '@pages/Media'
 import Song from '@pages/Song'
+import PostsManager from '@components/pagination/PostsManager'
 
 // import { AuthProvider } from './context/AuthContext'
 
@@ -56,6 +57,7 @@ function App() {
             }
           />
           <Route path='login' element={<Login />} /> */}
+          <Route path='posts' element={<PostsManager />} />
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>

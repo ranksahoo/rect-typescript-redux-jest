@@ -42,6 +42,9 @@ const Navbar = () => {
           <NavLink to='/users' style={navLinkStyle}>
             Users
           </NavLink>
+          <NavLink to='/posts' style={navLinkStyle}>
+            Posts
+          </NavLink>
         </>
       )}
       <div className='w-full'>

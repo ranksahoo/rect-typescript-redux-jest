@@ -40,7 +40,14 @@ module.exports = {
     'spaced-comment': 'error',
     'no-duplicate-imports': 'error',
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        // varsIgnorePattern: '^_',
+        // caughtErrorsIgnorePattern: '^_',
+      },
+    ],
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/prop-types': 'off',

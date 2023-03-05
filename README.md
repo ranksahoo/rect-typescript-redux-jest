@@ -82,3 +82,14 @@ git stash apply
 F:\working\typescript-project\rect-typescript-redux-jest>git add .
 warning: LF will be replaced by CRLF in mock-data/db.json.
 The file will have its original line endings in your working directory
+
+yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+yarn add -D @mswjs/data msw
+
+npx msw init public/ --save
+
+Package.json  
+"msw": {
+"workerDirectory": "public"
+}
