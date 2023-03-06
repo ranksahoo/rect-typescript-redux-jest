@@ -10,6 +10,7 @@ import { albumsApi } from '@store/apis/albumsApi'
 import { photosApi } from '@store/apis/photosApi'
 import { usersReducer } from '@store/slices/usersSlice'
 import { postsApi } from '@store/apis/postsApi'
+import { usersApi } from '@store/apis/usersApi'
 
 const store = configureStore({
   reducer: {
@@ -21,12 +22,14 @@ const store = configureStore({
     [albumsApi.reducerPath]: albumsApi.reducer,
     [photosApi.reducerPath]: photosApi.reducer,
     [postsApi.reducerPath]: postsApi.reducer,
+    [usersApi.reducerPath]: usersApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware()
       .concat(albumsApi.middleware)
       .concat(photosApi.middleware)
       .concat(postsApi.middleware)
+      .concat(usersApi.middleware)
   },
 })
 
@@ -39,6 +42,7 @@ export * from './thunks'
 export { useFetchAlbumsQuery, useAddAlbumMutation, useRemoveAlbumMutation } from './apis/albumsApi'
 export * from './apis/photosApi'
 export * from './apis/postsApi'
+export * from './apis/usersApi'
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>

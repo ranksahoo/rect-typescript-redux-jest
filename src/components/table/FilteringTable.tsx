@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import { useTable, useFilters, useGlobalFilter } from 'react-table'
-import MOCK_DATA from '@components/basic-table/MOCK_DATA.json'
-import { COLUMNS } from '@components/basic-table/columns'
-import '@components/basic-table/table.css'
+import MOCK_DATA from './MOCK_DATA.json'
+import { COLUMNS } from './columns'
+import './table.css'
 import { GlobalFilter } from './GlobalFilter'
 import { ColumnFilter } from './ColumnFilter'
 

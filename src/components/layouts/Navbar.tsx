@@ -21,7 +21,7 @@ const Navbar = () => {
       },
     })
   return (
-    <nav className="top-0 flex items-center w-full px-28 h-14 shadow bg-amber-700 text-white">
+    <nav className="top-0 flex h-14 w-full items-center gap-3 bg-amber-700 px-28 text-white shadow">
       <NavLink to="/" style={navLinkStyle}>
         Home
       </NavLink>
@@ -45,7 +45,7 @@ const Navbar = () => {
           <NavLink to="/posts" style={navLinkStyle}>
             Posts
           </NavLink>
-          <NavLink to="/table" style={navLinkStyle}>
+          <NavLink to="/table" style={navLinkStyle} className="w-44">
             Users Data
           </NavLink>
         </>

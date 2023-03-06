@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="p-4">
+      <div className="w-full p-4">
         <Routes>
           <Route path="/" element={<Home />} />
           {/* <Route

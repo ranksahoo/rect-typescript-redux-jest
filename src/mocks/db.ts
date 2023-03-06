@@ -3,6 +3,7 @@ import { factory, primaryKey } from '@mswjs/data'
 import { faker } from '@faker-js/faker'
 import { Post, postStatuses } from '@store/index'
 import { rest } from 'msw'
+import MOCK_DATA from './MOCK_DATA.json'
 
 const db = factory({
   post: {
@@ -14,6 +15,19 @@ const db = factory({
     status: String,
     createdAt: String,
     updatedAt: String,
+  },
+  user: {
+    id: primaryKey(Number),
+    // eslint-disable-next-line camelcase
+    first_name: String,
+    // eslint-disable-next-line camelcase
+    last_name: String,
+    email: String,
+    // eslint-disable-next-line camelcase
+    date_of_birth: String,
+    age: Number,
+    country: String,
+    phone: String,
   },
 })
 
@@ -34,6 +48,8 @@ const createPostData = (): Post => {
 
 ;[...new Array(50)].forEach((_) => db.post.create(createPostData()))
 
+MOCK_DATA.forEach((user) => db.user.create(user))
+
 export const handlers = [
   rest.get('/posts', (req, res, ctx) => {
     const page = (req.url.searchParams.get('page') || 1) as number
@@ -52,5 +68,24 @@ export const handlers = [
       }),
     )
   }),
+
+  rest.post('/users', (req, res, ctx) => {
+    const page = (req.url.searchParams.get('page') || 1) as number
+    const perPage = (req.url.searchParams.get('perPage') || 10) as number
+    const data = db.user.findMany({
+      take: perPage,
+      skip: Math.max(perPage * (page - 1), 0),
+    })
+    return res(
+      ctx.json({
+        data,
+        page,
+        // eslint-disable-next-line camelcase
+        total_pages: Math.ceil(db.user.count() / perPage),
+        total: db.user.count(),
+      }),
+    )
+  }),
   ...db.post.toHandlers('rest'),
+  ...db.user.toHandlers('rest'),
 ] as const
