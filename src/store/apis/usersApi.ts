@@ -25,9 +25,22 @@ interface ListResponse<T> {
   totalPages: number
   data: T[]
 }
+
+const pause = (duration: number) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, duration)
+  })
+}
+
 export const usersApi = createApi({
   reducerPath: 'new-users',
-  baseQuery: fetchBaseQuery({ baseUrl: '/' }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: '/',
+    fetchFn: async (...args) => {
+      await pause(1000)
+      return fetch(...args)
+    },
+  }),
   endpoints: (build) => ({
     listUsers: build.query<ListResponse<User>, Payload | void>({
       query: ({ page = 1, perPage = 10, sortBy = [], filters = [] }: Payload) => {
