@@ -18,6 +18,7 @@ import {
 } from '@chakra-ui/react'
 import { MdArrowBack, MdArrowForward, MdBook } from 'react-icons/md'
 import { Post, useListPostsQuery } from '@store/index'
+import Skeleton from '@components/Skeleton'
 
 const getColorForStatus = (status: Post['status']) => {
   return status === 'draft' ? 'gray' : status === 'pending_review' ? 'orange' : 'green'
@@ -28,7 +29,7 @@ const PostList = () => {
   const { data: posts, isLoading, isFetching } = useListPostsQuery(page)
 
   if (isLoading) {
-    return <div>Loading</div>
+    return <Skeleton times={6} className="h-10 w-full" />
   }
 
   if (!posts?.data) {

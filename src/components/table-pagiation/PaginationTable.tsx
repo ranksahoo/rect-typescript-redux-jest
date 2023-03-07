@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { useTable, usePagination } from 'react-table'
+import { useTable, usePagination, useFilters } from 'react-table'
 import {
   HiChevronLeft,
   HiChevronRight,
@@ -8,10 +8,18 @@ import {
 } from 'react-icons/hi'
 import { COLUMNS } from './columns'
 import MOCK_DATA from './MOCK_DATA.json'
+import { ColumnFilter } from '@components/table/ColumnFilter'
 
 export const PaginationTable = () => {
   const columns = useMemo(() => COLUMNS, [])
   const data = useMemo(() => MOCK_DATA, [])
+
+  const defaultColumn = useMemo(
+    () => ({
+      Filter: ColumnFilter,
+    }),
+    [],
+  )
 
   const {
     getTableProps,
@@ -32,8 +40,10 @@ export const PaginationTable = () => {
     {
       columns,
       data,
+      defaultColumn,
       initialState: { pageIndex: 0 },
     },
+    useFilters,
     usePagination,
   )
 
@@ -53,6 +63,7 @@ export const PaginationTable = () => {
                   {...column.getHeaderProps()}
                 >
                   {column.render('Header')}
+                  <div>{column.canFilter ? column.render('Filter') : null}</div>
                 </th>
               ))}
             </tr>
@@ -106,11 +117,10 @@ export const PaginationTable = () => {
               const pageNumber = e.target.value ? Number(e.target.value) - 1 : 0
               gotoPage(pageNumber)
             }}
-            style={{ width: '50px' }}
           />
         </span>{' '}
         <select
-          className="w-32"
+          className="w-32 p-2"
           value={pageSize}
           onChange={(e) => setPageSize(Number(e.target.value))}
         >

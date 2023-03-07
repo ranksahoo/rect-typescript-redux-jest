@@ -13,7 +13,7 @@ import UsersManager from '@components/table-pagiation/UsersManager'
 // import { FilteringTable } from '@components/filtering-table/FilteringTable'
 const Table = () => {
   return (
-    <div className="mx-auto">
+    <div className="container mx-auto">
       <h1 className="text-lg font-bold">Users</h1>
       {/* <BasicTable /> */}
       {/* <FilteringTable /> */}

@@ -19,8 +19,20 @@ interface ListResponse<T> {
   totalPages: number
   data: T[]
 }
+const pause = (duration: number) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, duration)
+  })
+}
+
 export const postsApi = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: '/' }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: '/',
+    fetchFn: async (...args) => {
+      await pause(1000)
+      return fetch(...args)
+    },
+  }),
   endpoints: (build) => ({
     listPosts: build.query<ListResponse<Post>, number | void>({
       query: (page = 1) => `posts?page=${page}`,

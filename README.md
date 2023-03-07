@@ -103,3 +103,8 @@ yarn add -D @types/styled-components
 yarn add -D @types/react-redux
 
 yarn add -D @types/react-redux
+
+yarn add -D @tailwindcss/forms
+
+In tailwind.config.js
+plugins: [require('@tailwindcss/forms')],
