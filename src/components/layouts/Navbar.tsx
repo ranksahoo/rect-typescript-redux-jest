@@ -48,6 +48,12 @@ const Navbar = () => {
           <NavLink to="/table" style={navLinkStyle} className="w-44">
             Users Data
           </NavLink>
+          <NavLink to="/components" style={navLinkStyle} className="w-44">
+            Components
+          </NavLink>
+          <NavLink to="/form" style={navLinkStyle} className="w-44">
+            Form
+          </NavLink>
         </>
       )}
       <div className="w-full">

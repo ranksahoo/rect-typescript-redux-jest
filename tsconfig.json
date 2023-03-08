@@ -33,7 +33,8 @@
       "@auth/*": ["auth/*"],
       "@mocks/*": ["mocks/*"],
       "@store/*": ["store/*"]
-    }
+    },
+    "typeRoots": ["./node_modules/@types", "./typings"]
   },
   "include": ["src", "src/**/*"],
   "exclude": ["node_modules", "build"]

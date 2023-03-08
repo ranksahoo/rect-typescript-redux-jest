@@ -1,9 +1,10 @@
 import { nanoid } from '@reduxjs/toolkit'
 import { factory, primaryKey } from '@mswjs/data'
 import { faker } from '@faker-js/faker'
-import { Post, postStatuses } from '@store/index'
+import { Payload, Post, postStatuses } from '@store/index'
 import { rest } from 'msw'
 import MOCK_DATA from './MOCK_DATA.json'
+import _ from 'lodash'
 
 const db = factory({
   post: {
@@ -69,19 +70,45 @@ export const handlers = [
     )
   }),
 
-  rest.post('/users', (req, res, ctx) => {
+  rest.post('/users', async (req, res, ctx) => {
     const page = (req.url.searchParams.get('page') || 1) as number
     const perPage = (req.url.searchParams.get('perPage') || 10) as number
-    const data = db.user.findMany({
-      take: perPage,
-      skip: Math.max(perPage * (page - 1), 0),
-    })
+    const payload: Payload = await req.json()
+    const sortBy: any[] = []
+    const filters: any = {}
+    if (payload.sortBy) {
+      payload.sortBy.forEach((item) => {
+        sortBy.push({ [item.id]: item.desc ? 'desc' : 'asc' })
+      })
+    }
+    console.log(payload)
+    if (payload.filters) {
+      payload.filters.forEach((item) => {
+        filters[item.id] = { contains: item.value }
+        console.log(filters)
+      })
+    }
+    console.log(filters)
+
+    const requestData: any = {
+      take: Number(perPage),
+      skip: Math.max(Number(perPage) * (Number(page) - 1), 0),
+    }
+    if (!_.isEmpty(sortBy)) {
+      requestData['orderBy'] = sortBy
+    }
+    if (!_.isEmpty(filters)) {
+      requestData['where'] = filters
+    }
+    console.log(requestData)
+
+    const data = db.user.findMany(requestData)
     return res(
       ctx.json({
         data,
         page,
         // eslint-disable-next-line camelcase
-        total_pages: Math.ceil(db.user.count() / perPage),
+        totalPages: Math.ceil(db.user.count() / Number(perPage)),
         total: db.user.count(),
       }),
     )

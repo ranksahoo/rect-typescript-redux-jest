@@ -108,3 +108,7 @@ yarn add -D @tailwindcss/forms
 
 In tailwind.config.js
 plugins: [require('@tailwindcss/forms')],
+
+yarn add @headlessui/react
+
+yarn add @heroicons/react

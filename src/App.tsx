@@ -10,6 +10,8 @@ import Media from '@pages/Media'
 import Song from '@pages/Song'
 import Table from '@pages/Table'
 import PostsManager from '@components/pagination/PostsManager'
+import HeadlessDemo from '@pages/HeadlessDemo'
+import FormDemo from '@pages/FormDemo'
 
 // import { AuthProvider } from './context/AuthContext'
 
@@ -60,6 +62,8 @@ function App() {
           <Route path='login' element={<Login />} /> */}
           <Route path="posts" element={<PostsManager />} />
           <Route path="table" element={<Table />} />
+          <Route path="components" element={<HeadlessDemo />} />
+          <Route path="form" element={<FormDemo />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>

@@ -31,7 +31,7 @@ function UserList() {
   }
   return (
     <div>
-      <div className="flex flex-row justify-between items-center m-3">
+      <div className="m-3 flex flex-row items-center justify-between">
         <h1 className="m-2 text-xl">Users</h1>
         <Button loading={isCreatingUsers} onClick={handleAddUser}>
           + Add User

@@ -4,6 +4,7 @@
 // import { ColumnHiding } from '@components/sorting-table/ColumnHiding'
 // import { RowSelection } from '@components/sorting-table/RowSelection'
 
+import Skeleton from '@components/Skeleton'
 import UsersManager from '@components/table-pagiation/UsersManager'
 
 // import { PaginationTable } from '@components/table-pagiation/PaginationTable'
@@ -23,6 +24,7 @@ const Table = () => {
       {/* <RowSelection /> */}
       {/* <PaginationTable /> */}
       <UsersManager />
+      <Skeleton times={0} className={''} />
     </div>
   )
 }
