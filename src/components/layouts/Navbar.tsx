@@ -46,7 +46,7 @@ const Navbar = () => {
             Posts
           </NavLink>
           <NavLink to="/table" style={navLinkStyle} className="w-44">
-            Users Data
+            Pagination
           </NavLink>
           <NavLink to="/components" style={navLinkStyle} className="w-44">
             Components

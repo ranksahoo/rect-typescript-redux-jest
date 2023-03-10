@@ -1,10 +1,12 @@
-import UserList from '@components/user/UserList'
+import UsersManager from '@components/table-pagiation/UsersManager'
+// import UserList from '@components/user/UserList'
 
 const Home = () => {
   return (
     <div className="container mx-auto">
       <h1 className="text-lg font-bold">Home Page</h1>
-      <UserList />
+      {/* <UserList /> */}
+      <UsersManager />
     </div>
   )
 }

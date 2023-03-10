@@ -24,7 +24,7 @@ const Table = () => {
       {/* <RowSelection /> */}
       {/* <PaginationTable /> */}
       <UsersManager />
-      <Skeleton times={0} className={''} />
+      {/* <Skeleton times={0} className={''} /> */}
     </div>
   )
 }

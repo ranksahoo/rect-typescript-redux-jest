@@ -18,7 +18,7 @@ export const ColumnFilter = ({ column }) => {
       </div>
       <input
         className="pl-6"
-        type="text"
+        type={column.type}
         value={value || ''}
         onChange={(e) => {
           setValue(e.target.value)

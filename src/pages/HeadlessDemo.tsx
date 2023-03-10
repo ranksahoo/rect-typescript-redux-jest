@@ -11,7 +11,7 @@ import TransitionDemo from '@components/headless/TransitionDemo'
 
 const HeadlessDemo = () => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto bg-gray-400">
       <h1 className="text-lg font-bold">Components</h1>
       {/* <div className="my-3 flex items-center gap-3">
         Menu Dropdown : <MenuDropdown />
@@ -27,10 +27,12 @@ const HeadlessDemo = () => {
       </div>
       <DisclosureDemo />
       <DialogModal /> */}
-      {/* <PopoverDemo /> */}
+      <div className="my-3 flex h-full items-center gap-3 bg-gray-400">
+        <PopoverDemo />
+      </div>
       {/* <RadioGroupDemo /> */}
       {/* <TabsDemo /> */}
-      <TransitionDemo />
+      {/* <TransitionDemo /> */}
     </div>
   )
 }

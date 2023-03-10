@@ -101,6 +101,7 @@ export const handlers = [
       requestData['where'] = filters
     }
     console.log(requestData)
+    const updatedData = db.user.findMany({ where: filters })
 
     const data = db.user.findMany(requestData)
     return res(
@@ -108,8 +109,8 @@ export const handlers = [
         data,
         page,
         // eslint-disable-next-line camelcase
-        totalPages: Math.ceil(db.user.count() / Number(perPage)),
-        total: db.user.count(),
+        totalPages: Math.ceil(updatedData.length / Number(perPage)),
+        total: updatedData.length,
       }),
     )
   }),

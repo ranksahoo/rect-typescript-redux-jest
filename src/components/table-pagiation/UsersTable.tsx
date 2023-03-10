@@ -1,5 +1,12 @@
-import React, { useState, useEffect, useMemo, useReducer } from 'react'
-import { useTable, usePagination, useSortBy, useFilters, useRowSelect } from 'react-table'
+import React, { useEffect, useMemo, useReducer } from 'react'
+import {
+  useTable,
+  usePagination,
+  useSortBy,
+  useFilters,
+  useRowSelect,
+  useResizeColumns,
+} from 'react-table'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
 import axios from 'axios'
 
@@ -8,6 +15,9 @@ import Pagination from './Pagination'
 import { ColumnFilter } from '@components/table/ColumnFilter'
 import { Checkbox } from '@components/table/Checkbox'
 import { FaSortDown, FaSortUp, FaSort } from 'react-icons/fa'
+
+import FiltersPopover from './FiltersPopover'
+import ColumnSelectionPopover from './ColumnSelectionPopover'
 
 const queryClient = new QueryClient()
 
@@ -75,21 +85,6 @@ const fetchUsersData = async (page, pageSize, pageFilter, pageSortBy) => {
 }
 
 const DataTable = () => {
-  const [keyword, setKeyword] = useState('')
-  const [useFilter, setUseFilter] = useState(false)
-  const onClickFilterCallback = (filter) => {
-    if (filter.trim() === '') {
-      alert('Please enter a keyword to search!')
-      return
-    }
-    if (filter === keyword) {
-      alert('No change in search')
-      return
-    }
-    setUseFilter(true)
-    setKeyword(filter)
-  }
-
   const columns = useMemo(() => COLUMNS, [])
 
   const [
@@ -111,6 +106,9 @@ const DataTable = () => {
 
   const defaultColumn = useMemo(
     () => ({
+      minWidth: 30,
+      width: 150,
+      maxWidth: 100,
       Filter: ColumnFilter,
     }),
     [],
@@ -130,6 +128,10 @@ const DataTable = () => {
     nextPage,
     canNextPage,
     setPageSize,
+    allColumns,
+    getToggleHideAllColumnsProps,
+    setSortBy,
+    setAllFilters,
     state: { pageIndex, pageSize, sortBy, filters },
   } = useTable(
     {
@@ -154,6 +156,7 @@ const DataTable = () => {
     useSortBy,
     usePagination,
     useRowSelect,
+    useResizeColumns,
     (hooks) => {
       hooks.visibleColumns.push((columns) => [
         {
@@ -188,7 +191,7 @@ const DataTable = () => {
   useEffect(() => {
     dispatch({ type: PAGE_FILTER_CHANGED, payload: filters })
     gotoPage(0)
-  }, [filters, gotoPage, useFilter])
+  }, [filters, gotoPage])
 
   useEffect(() => {
     if (data?.count) {
@@ -213,6 +216,21 @@ const DataTable = () => {
         {typeof data?.count === 'undefined' && <p>No results found</p>}
         {data?.count && (
           <>
+            <div className="mx-8 flex items-center justify-end">
+              <div className="m-2 flex items-center gap-2">
+                <ColumnSelectionPopover
+                  allColumns={allColumns}
+                  getToggleHideAllColumnsProps={getToggleHideAllColumnsProps}
+                />
+                <FiltersPopover
+                  columns={columns}
+                  setSortBy={setSortBy}
+                  setAllFilters={setAllFilters}
+                  sortBy={sortBy}
+                  filters={filters}
+                />
+              </div>
+            </div>
             <table className="w-full border-collapse font-sans" {...getTableProps()}>
               <thead>
                 {headerGroups.map((headerGroup) => (
@@ -245,7 +263,7 @@ const DataTable = () => {
                             )}
                           </span>
                         </div>
-                        <div>{column.canFilter ? column.render('Filter') : null}</div>
+                        {/* <div>{column.canFilter ? column.render('Filter') : null}</div> */}
                       </th>
                     ))}
                   </tr>
