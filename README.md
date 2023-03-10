@@ -112,3 +112,23 @@ plugins: [require('@tailwindcss/forms')],
 yarn add @headlessui/react
 
 yarn add @heroicons/react
+
+ <label htmlFor="sort">Sort by:</label>
+      <select
+        name="sort"
+        onChange={(e) => {
+          const field = e.target.value;
+          const desc = field.startsWith('-');
+          const accessor = desc ? field.substring(1) : field;
+          const newSortBy = [{ id: accessor, desc }];
+          setSortBy(newSortBy);
+        }}
+      >
+        <option value="">None</option>
+        {columns.map((column) => (
+          <option key={column.accessor} value={column.accessor}>
+            {column.Header}
+          </option>
+        ))}
+      </select>
+
