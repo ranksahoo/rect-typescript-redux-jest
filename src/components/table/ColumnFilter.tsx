@@ -18,12 +18,13 @@ export const ColumnFilter = ({ column }) => {
       </div>
       <input
         className="pl-6"
-        type={column.type}
+        type="text"
         value={value || ''}
         onChange={(e) => {
           setValue(e.target.value)
-          onChange(e.target.value)
+          //onChange(e.target.value)
         }}
+        disabled
       />
     </div>
   )

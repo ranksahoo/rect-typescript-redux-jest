@@ -3,13 +3,7 @@ import Button from '../Button'
 
 describe('Button', () => {
   it('renders', () => {
-    render(
-      <Button
-        text="hello"
-        onClick={() => {
-          console.log()
-        }}
-      />,
-    )
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    render(<Button text="hello" onClick={() => {}} />)
   })
 })

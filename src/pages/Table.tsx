@@ -5,7 +5,7 @@
 // import { RowSelection } from '@components/sorting-table/RowSelection'
 
 import Skeleton from '@components/Skeleton'
-import UsersManager from '@components/table-pagiation/UsersManager'
+import UsersManager from '@components/table-pagination/UsersManager'
 
 // import { PaginationTable } from '@components/table-pagiation/PaginationTable'
 

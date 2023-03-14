@@ -102,7 +102,6 @@ const DataTable = () => {
   )
 
   const totalPageCount = Math.ceil(totalCount / queryPageSize)
-  console.log('totalPageCount::', totalPageCount)
 
   const defaultColumn = useMemo(
     () => ({
@@ -118,7 +117,6 @@ const DataTable = () => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
     prepareRow,
     page,
     pageCount,
@@ -213,102 +211,102 @@ const DataTable = () => {
   return (
     <>
       <div>
-        {typeof data?.count === 'undefined' && <p>No results found</p>}
-        {data?.count && (
-          <>
-            <div className="mx-8 flex items-center justify-end">
-              <div className="m-2 flex items-center gap-2">
-                <ColumnSelectionPopover
-                  allColumns={allColumns}
-                  getToggleHideAllColumnsProps={getToggleHideAllColumnsProps}
-                />
-                <FiltersPopover
-                  columns={columns}
-                  setSortBy={setSortBy}
-                  setAllFilters={setAllFilters}
-                  sortBy={sortBy}
-                  filters={filters}
-                />
-              </div>
+        <>
+          <div className="mx-8 flex items-center justify-end">
+            <div className="m-2 flex items-center gap-2">
+              <ColumnSelectionPopover
+                allColumns={allColumns}
+                getToggleHideAllColumnsProps={getToggleHideAllColumnsProps}
+              />
+              <FiltersPopover
+                columns={columns}
+                setSortBy={setSortBy}
+                setAllFilters={setAllFilters}
+                sortBy={sortBy}
+                filters={filters}
+              />
             </div>
-            <table className="w-full border-collapse font-sans" {...getTableProps()}>
-              <thead>
-                {headerGroups.map((headerGroup) => (
-                  // eslint-disable-next-line react/jsx-key
-                  <tr className="w-full" {...headerGroup.getHeaderGroupProps()}>
-                    {headerGroup.headers.map((column) => (
-                      // eslint-disable-next-line react/jsx-key
-                      <th
-                        className="border border-[#ddd] px-2 py-3 text-center"
-                        {...column.getHeaderProps()}
+          </div>
+          <table className="w-full border-collapse font-sans" {...getTableProps()}>
+            <thead>
+              {headerGroups.map((headerGroup) => (
+                // eslint-disable-next-line react/jsx-key
+                <tr className="w-full" {...headerGroup.getHeaderGroupProps()}>
+                  {headerGroup.headers.map((column) => (
+                    // eslint-disable-next-line react/jsx-key
+                    <th
+                      className="border border-[#ddd] px-2 py-3 text-center"
+                      {...column.getHeaderProps()}
+                    >
+                      {/* {column.render('Header')} */}
+                      <div
+                        className="flex h-full w-full items-center justify-between"
+                        {...column.getHeaderProps(column.getSortByToggleProps())}
                       >
-                        <div
-                          className="flex h-full w-full items-center justify-between"
-                          {...column.getHeaderProps(column.getSortByToggleProps())}
-                        >
-                          {column.render('Header')}
-                          <span>
-                            {column.canSort ? (
-                              column.isSorted ? (
-                                column.isSortedDesc ? (
-                                  <FaSortDown />
-                                ) : (
-                                  <FaSortUp />
-                                )
+                        {column.render('Header')}
+                        <span>
+                          {column.canSort ? (
+                            column.isSorted ? (
+                              column.isSortedDesc ? (
+                                <FaSortDown />
                               ) : (
-                                <FaSort />
+                                <FaSortUp />
                               )
                             ) : (
-                              ''
-                            )}
-                          </span>
-                        </div>
-                        {/* <div>{column.canFilter ? column.render('Filter') : null}</div> */}
-                      </th>
-                    ))}
+                              <FaSort />
+                            )
+                          ) : (
+                            ''
+                          )}
+                        </span>
+                      </div>
+                      <div>{column.canFilter ? column.render('Filter') : null}</div>
+                      {/* {column.canResize && (
+                          <div
+                            {...column.getResizerProps()}
+                            className={`resizer ${column.isResizing ? 'isResizing' : ''}`}
+                          />
+                        )} */}
+                    </th>
+                  ))}
+                </tr>
+              ))}
+            </thead>
+            <tbody {...getTableBodyProps()}>
+              {page.map((row) => {
+                prepareRow(row)
+                return (
+                  // eslint-disable-next-line react/jsx-key
+                  <tr
+                    className="odd:bg-white even:bg-[#f2f2f2] hover:bg-[#ddd]"
+                    {...row.getRowProps()}
+                  >
+                    {row.cells.map((cell) => {
+                      return (
+                        // eslint-disable-next-line react/jsx-key
+                        <td className="border border-[#ddd] p-2" {...cell.getCellProps()}>
+                          {cell.render('Cell')}
+                        </td>
+                      )
+                    })}
                   </tr>
-                ))}
-              </thead>
-              <tbody {...getTableBodyProps()}>
-                {page.map((row) => {
-                  prepareRow(row)
-                  return (
-                    // eslint-disable-next-line react/jsx-key
-                    <tr
-                      className="odd:bg-white even:bg-[#f2f2f2] hover:bg-[#ddd]"
-                      {...row.getRowProps()}
-                    >
-                      {row.cells.map((cell) => {
-                        return (
-                          // eslint-disable-next-line react/jsx-key
-                          <td className="border border-[#ddd] p-2" {...cell.getCellProps()}>
-                            {cell.render('Cell')}
-                          </td>
-                        )
-                      })}
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </>
-        )}
-      </div>
-      {rows.length > 0 && (
-        <>
-          <Pagination
-            gotoPage={gotoPage}
-            previousPage={previousPage}
-            nextPage={nextPage}
-            setPageSize={setPageSize}
-            canPreviousPage={canPreviousPage}
-            canNextPage={canNextPage}
-            pageIndex={pageIndex}
-            pageSize={pageSize}
-            pageCount={pageCount}
-          />
+                )
+              })}
+            </tbody>
+          </table>
         </>
-      )}
+      </div>
+      <Pagination
+        gotoPage={gotoPage}
+        previousPage={previousPage}
+        nextPage={nextPage}
+        setPageSize={setPageSize}
+        canPreviousPage={canPreviousPage}
+        canNextPage={canNextPage}
+        pageIndex={pageIndex}
+        pageSize={pageSize}
+        pageCount={pageCount}
+      />
     </>
   )
 }

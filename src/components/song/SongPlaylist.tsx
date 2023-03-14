@@ -14,7 +14,6 @@ function SongPlaylist() {
     // Add song to list of songs
 
     // const action = addSong(song);
-    // console.log(action);
     // dispatch(action);
     dispatch(addSong(song))
   }

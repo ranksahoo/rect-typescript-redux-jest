@@ -54,6 +54,6 @@ export const COLUMNS = [
     Header: 'Age',
     Footer: 'Age',
     accessor: 'age',
-    type: 'text',
+    type: 'number',
   },
 ]

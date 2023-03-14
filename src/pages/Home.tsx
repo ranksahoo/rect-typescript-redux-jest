@@ -1,4 +1,4 @@
-import UsersManager from '@components/table-pagiation/UsersManager'
+import UsersManager from '@components/table-pagination2/UsersManager'
 // import UserList from '@components/user/UserList'
 
 const Home = () => {

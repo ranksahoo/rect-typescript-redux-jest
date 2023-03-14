@@ -18,7 +18,7 @@ export default function ReactHookForm() {
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   })
-  const onSubmit = (data: FormData) => console.log(data)
+  const onSubmit = (data: FormData) => console.info(data)
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

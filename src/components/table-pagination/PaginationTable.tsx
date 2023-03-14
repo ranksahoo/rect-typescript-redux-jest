@@ -49,8 +49,6 @@ PaginationTableProps) => {
   }
 
   const reducer = (state, { type, payload }) => {
-    console.log('type::', type)
-    console.log('payload::', payload)
     switch (type) {
       case PAGE_CHANGED:
         return {
@@ -81,14 +79,10 @@ PaginationTableProps) => {
     }
   }
 
-  console.log('pageIndex::')
-
   const [{ ctlpageIndex, ctlpageSize, ctlpageCount, ctlfilters, ctlsortBy }, dispatch] = useReducer(
     reducer,
     initialState,
   )
-
-  console.log('pageIndex::', ctlpageIndex)
 
   const {
     data: users,
@@ -143,7 +137,6 @@ PaginationTableProps) => {
 
   useEffect(() => {
     dispatch({ type: PAGE_CHANGED, payload: pageIndex })
-    console.log(pageIndex)
   }, [dispatch, pageIndex])
 
   useEffect(() => {

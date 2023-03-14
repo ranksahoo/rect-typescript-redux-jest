@@ -17,6 +17,13 @@ const schema = yup
   .object({
     sortBy: yup.string(),
     orderBy: yup.string(),
+    first_name: yup.string(),
+    last_name: yup.string(),
+    date_of_birth: yup.date(),
+    country: yup.string(),
+    phone: yup.string(),
+    email: yup.string(),
+    age: yup.number(),
   })
   .required()
 type FormData = yup.InferType<typeof schema>
@@ -40,10 +47,8 @@ export default function FiltersPopover({
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   })
-  console.log(register)
 
   useEffect(() => {
-    console.log('xxxxxxxxxxxxxxxxxxx')
     const data: any = {}
     if (!_.isEmpty(sortBy)) {
       data.sortBy = sortBy[0].id
@@ -54,7 +59,6 @@ export default function FiltersPopover({
         data[item.id] = item.value
       })
     }
-    console.log('xxxxxxxxxxxxxxxxxxx', data)
     const selectedFilters = availableColumns.filter((item) => {
       for (const property in data) {
         if (property === item.accessor) return true
@@ -65,7 +69,6 @@ export default function FiltersPopover({
   }, [sortBy, filters, reset])
 
   const onSubmit = (data: FormData) => {
-    console.log(data)
     const request: any = { ...data }
     const sortBy: any = {}
     if (request.sortBy) {
@@ -221,6 +224,7 @@ export default function FiltersPopover({
                         onClick={() => {
                           setSelectedFilters([])
                           reset({ sortBy: '', orderBy: '' })
+                          setAvailableColumns(columns)
                         }}
                       >
                         Reset

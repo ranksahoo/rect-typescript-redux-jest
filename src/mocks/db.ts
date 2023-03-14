@@ -84,7 +84,14 @@ export const handlers = [
     console.log(payload)
     if (payload.filters) {
       payload.filters.forEach((item) => {
-        filters[item.id] = { contains: item.value }
+        console.log('isDate::', _.isDate(item.value))
+        if (_.isNumber(item.value)) {
+          filters[item.id] = { equals: Number(item.value) }
+        } else if (_.isDate(item.value)) {
+          filters[item.id] = { equals: item.value }
+        } else {
+          filters[item.id] = { contains: item.value }
+        }
         console.log(filters)
       })
     }

@@ -25,3 +25,17 @@
     @apply rounded border-gray-300 text-indigo-600 focus:ring-indigo-500;
   }
 }
+
+/* .table {
+  border: 2px red solid;
+  display: inline-block;
+}
+.table .th .resizer,
+.table .td .resizer {
+  right: 0;
+  background: blue;
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+} */
