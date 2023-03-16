@@ -45,6 +45,7 @@ export default function RadioGroupDemo() {
                     relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
                 }
               >
+                {/* eslint-disable-next-line @typescript-eslint/no-unused-vars*/}
                 {({ active, checked }) => (
                   <>
                     <div className="flex w-full items-center justify-between">

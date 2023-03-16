@@ -148,7 +148,7 @@ const DataTable = () => {
       ])
     },
   )
-  const manualPageSize = []
+  // const manualPageSize = []
 
   useEffect(() => {
     dispatch({ type: PAGE_CHANGED, payload: pageIndex })

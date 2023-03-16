@@ -1,7 +1,7 @@
 // import { FormikForm } from '@components/ui-demo/FormikForm'
 // import ReactHookForm from '@components/ui-demo/ReactHookForm'
 
-import Dropdowns from '@components/ui-demo/Dropdowns'
+// import Dropdowns from '@components/ui-demo/Dropdowns'
 import StackedLayouts from '@components/ui-demo/StackedLayouts'
 
 // import DescriptionLists from '@components/ui-demo/DescriptionLists'

@@ -101,6 +101,8 @@ const DataTable = () => {
     },
   )
 
+  console.log(isSuccess)
+
   const totalPageCount = Math.ceil(totalCount / queryPageSize)
 
   const defaultColumn = useMemo(
@@ -170,7 +172,7 @@ const DataTable = () => {
       ])
     },
   )
-  const manualPageSize = []
+  // const manualPageSize = []
 
   useEffect(() => {
     dispatch({ type: PAGE_CHANGED, payload: pageIndex })

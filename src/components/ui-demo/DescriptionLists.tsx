@@ -40,10 +40,7 @@ export default function DescriptionLists() {
           <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
             <dt className="text-sm font-medium text-gray-500">Attachments</dt>
             <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-              <ul
-                role="list"
-                className="divide-y divide-gray-200 rounded-md border border-gray-200"
-              >
+              <ul className="divide-y divide-gray-200 rounded-md border border-gray-200">
                 <li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
                   <div className="flex w-0 flex-1 items-center">
                     <PaperClipIcon
@@ -69,7 +66,7 @@ export default function DescriptionLists() {
                     </span>
                   </div>
                   <div className="ml-4 flex-shrink-0">
-                    <Link href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                    <Link href="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                       Download
                     </Link>
                   </div>

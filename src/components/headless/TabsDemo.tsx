@@ -7,7 +7,7 @@ function classNames(...classes) {
 }
 
 export default function TabsDemo() {
-  let [categories] = useState({
+  const [categories] = useState({
     Recent: [
       {
         id: 1,

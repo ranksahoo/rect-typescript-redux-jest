@@ -4,7 +4,7 @@ import { useTimeoutFn } from 'react-use'
 
 export default function Example() {
   const [isShowing, setIsShowing] = useState(true)
-  let [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500)
+  const [, , resetIsShowing] = useTimeoutFn(() => setIsShowing(true), 500)
 
   return (
     <div className="flex flex-col items-center bg-red-300 py-16">

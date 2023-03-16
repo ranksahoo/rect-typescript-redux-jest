@@ -48,6 +48,8 @@ export default function FiltersPopover({
     resolver: yupResolver(schema),
   })
 
+  console.log(errors)
+
   useEffect(() => {
     const data: any = {}
     if (!_.isEmpty(sortBy)) {
