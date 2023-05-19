@@ -205,7 +205,7 @@ const DataTable = () => {
               />
             </div>
           </div>
-          <table className="w-full border-collapse font-sans" {...getTableProps()}>
+          <table className="w-full border-collapse" {...getTableProps()}>
             <thead>
               {headerGroups.map((headerGroup) => (
                 // eslint-disable-next-line react/jsx-key

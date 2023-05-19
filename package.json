@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack serve --env env=dev",
+    "build": "npm run build:prod",
     "build:dev": "webpack --env env=dev",
     "build:prod": "webpack --env env=prod",
     "build:start": "cd build && set PORT=3000 && npx serve",
